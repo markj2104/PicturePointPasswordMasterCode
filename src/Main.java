@@ -8,6 +8,7 @@ public class Main {
 
         // Step 1: Setup password
         System.out.println("Select points to set the password...");
+        System.out.println("Close window when finished!");
         PicturePointPassword setupFrame = new PicturePointPassword("Setup Password", "C:\\Users\\marki\\Downloads\\JPEG_007.jpg");
 
         // Wait for the setup window to close
@@ -29,6 +30,7 @@ public class Main {
 
         // Step 2: Verify password
         System.out.println("Select points to verify the password...");
+        System.out.println("Close window when finished!");
         PicturePointPassword verifyFrame = new PicturePointPassword("Verify Password", "C:\\Users\\marki\\Downloads\\JPEG_007.jpg");
 
         // Wait for the verification window to close

@@ -7,7 +7,7 @@ public class BruteForceAttack {
     private int tolerance;
 
     public BruteForceAttack(PasswordStorage passwordStorage, int tolerance) {
-        this.tolerance = tolerance;
+        this.tolerance = tolerance; // The step size for brute force attempts
         this.passwordStorage = passwordStorage; // Use the same password storage logic
     }
 
