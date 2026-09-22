@@ -3,13 +3,18 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+        if (args.length != 1 || !java.nio.file.Files.isRegularFile(java.nio.file.Path.of(args[0]))) {
+            System.err.println("Usage: java -cp out Main <path-to-image>");
+            return;
+        }
+        String imagePath = args[0];
         int tolerance = 20; // Example tolerance value
         PasswordSystem passwordSystem = new PasswordSystem(tolerance);
 
         // Step 1: Setup password
         System.out.println("Select points to set the password...");
         System.out.println("Close window when finished!");
-        PicturePointPassword setupFrame = new PicturePointPassword("Setup Password", "C:\\Users\\marki\\Downloads\\JPEG_007.jpg");
+        PicturePointPassword setupFrame = new PicturePointPassword("Setup Password", imagePath);
 
         // Wait for the setup window to close
         while (setupFrame.isShowing()) {
@@ -31,7 +36,7 @@ public class Main {
         // Step 2: Verify password
         System.out.println("Select points to verify the password...");
         System.out.println("Close window when finished!");
-        PicturePointPassword verifyFrame = new PicturePointPassword("Verify Password", "C:\\Users\\marki\\Downloads\\JPEG_007.jpg");
+        PicturePointPassword verifyFrame = new PicturePointPassword("Verify Password", imagePath);
 
         // Wait for the verification window to close
         while (verifyFrame.isShowing()) {
